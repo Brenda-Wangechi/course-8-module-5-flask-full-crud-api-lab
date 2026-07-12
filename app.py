@@ -78,5 +78,20 @@ def delete_event(event_id):
     events.remove(event)
     return "", 204
 
+# Error handler for 404 Not Found
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({"error": "Endpoint not found."}), 404
+
+# Error handler for 405 Method Not Allowed
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return jsonify({"error": "Method not allowed."}), 405
+
+# Error handler for 500 Internal Server Error (for debugging)
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({"error": "Internal server error."}), 500
+
 if __name__ == "__main__":
     app.run(debug=True)

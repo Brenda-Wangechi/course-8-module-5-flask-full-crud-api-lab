@@ -41,18 +41,13 @@ Ensure Python is installed:
 python --version
 ```
 
-Install Flask and dependencies using pipenv:
+Install Flask and dependencies using pip:
 
 ```bash
-pipenv install
-pipenv shell
+pip install -r requirements.txt
 ```
 
-Or with pip:
-
-```bash
-pip install flask
-```
+This will install Flask, pytest, and the `event-api` package in editable mode, making the app importable from anywhere.
 
 ## Tasks
 

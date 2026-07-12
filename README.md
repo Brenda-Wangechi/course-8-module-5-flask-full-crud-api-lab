@@ -113,7 +113,28 @@ if __name__ == "__main__":
 
 ---
 
-### Task 4: Test the API
+### Task 4: Run Automated Tests
+
+Run the test suite to validate the implementation:
+
+```bash
+pytest
+```
+
+For verbose output:
+
+```bash
+pytest -v
+```
+
+All 5 tests should pass:
+- `test_create_event` - Validates POST /events returns 201 with new event
+- `test_update_event` - Validates PATCH /events/<id> updates event title
+- `test_update_event_not_found` - Validates PATCH returns 404 for non-existent event
+- `test_delete_event` - Validates DELETE /events/<id> returns 204
+- `test_delete_event_not_found` - Validates DELETE returns 404 for non-existent event
+
+### Task 5: Manual Testing
 
 Start the Flask development server:
 
